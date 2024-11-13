@@ -66,7 +66,7 @@ export const serialsNameSlice = createSlice({
           state.filmInfo = {
   name: responseNew.name ,
   language: responseNew.language,
-  image:responseNew.image.medium,
+  image:responseNew.image.original,
   summary: responseNew.summary
 };
 

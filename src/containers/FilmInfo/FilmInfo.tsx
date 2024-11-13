@@ -6,12 +6,13 @@ const FilmInfo = () => {
   const filmInfo = useAppSelector(selectInfo);
   console.log(filmInfo);
   return (
-    <div className='row'>
-      <img className='col-4' src={filmInfo.image} alt={filmInfo.name}/>
-      <div className='col-8'><h2 className='fs-2'>{filmInfo.name}</h2>
-        <span>Language:<strong> {filmInfo.language}</strong></span>
-        <p>{filmInfo.summary}</p></div>
-    </div>
+    <>
+      <img className='float-start me-3 mt-4 mb-2 w-25' src={filmInfo.image} alt={filmInfo.name}/>
+      <h2 className='fs-2 mt-2 pt-4'>{filmInfo.name}</h2>
+      <span className='fs-4 d-block my-3'>Language:<strong> {filmInfo.language}</strong></span>
+      {/*<p className={'fs-5'}>{filmInfo.summary}</p>*/}
+      <div dangerouslySetInnerHTML={{__html: filmInfo.summary}}/>
+    </>
   );
 };
 

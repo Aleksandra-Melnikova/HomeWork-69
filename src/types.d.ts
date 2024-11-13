@@ -7,7 +7,7 @@ export interface IFilm {
 }
 
 export interface IOneFilmFromApi {
-  image:{medium:string};
+  image:{original:string};
   language:string;
   name: string;
   summary:string;
