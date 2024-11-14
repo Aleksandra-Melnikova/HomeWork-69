@@ -10,16 +10,17 @@ interface SerialsNameState {
   isLoadingGetInfo: boolean;
   error: boolean;
 }
+const initialFilmInfo = {
+  name: "",
+  language: "",
+  image: "",
+  summary: "",
+};
 
 const initialState: SerialsNameState = {
   films: [],
   isLoadingSearch: false,
-  filmInfo: {
-    name: "",
-    language: "",
-    image: "",
-    summary: "",
-  },
+  filmInfo: initialFilmInfo,
   isLoadingGetInfo: false,
   error: false,
 };
@@ -44,17 +45,7 @@ export const serialsNameSlice = createSlice({
       .addCase(onSearch.fulfilled, (state, action) => {
         state.isLoadingSearch = false;
         if (action.payload) {
-          const responseNew = action.payload;
-          const array: IFilm[] = [];
-          for (let i = 0; i < responseNew.length; i++) {
-            array.push({
-              name: responseNew[i].show.name,
-              id: responseNew[i].show.id,
-            });
-          }
-          state.films = array;
-        } else {
-          state.films = [];
+          state.films = action.payload;
         }
       })
 
@@ -70,13 +61,7 @@ export const serialsNameSlice = createSlice({
         state.isLoadingGetInfo = false;
         if (action.payload) {
           state.films = [];
-          const responseNew = action.payload;
-          state.filmInfo = {
-            name: responseNew.name,
-            language: responseNew.language,
-            image: responseNew.image.original,
-            summary: responseNew.summary,
-          };
+          state.filmInfo = action.payload;
         }
       })
       .addCase(getInfoOneFilm.rejected, (state) => {
