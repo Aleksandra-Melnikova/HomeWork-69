@@ -1,16 +1,16 @@
-.film-list{
+.film-list {
   position: relative;
   top: 5px;
   right: 0;
   padding: 10px;
 }
 
-.film-list a{
+.film-list a {
   text-decoration: none;
   color: black;
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 
-.film-list a:hover{
+.film-list a:hover {
   text-shadow: 1px 1px 1px grey;
 }

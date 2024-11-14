@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { serialsNameReducer } from '../store/slices/selialsNameSlices.ts';
+import { serialsNameReducer } from "../store/slices/selialsNameSlices.ts";
 
 export const store = configureStore({
   reducer: {

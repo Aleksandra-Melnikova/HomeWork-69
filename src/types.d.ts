@@ -1,22 +1,22 @@
 export interface API {
-  show: {name: string, id: number};
+  show: { name: string; id: number };
 }
 
 export interface IFilm {
-  name: string, id: number
+  name: string;
+  id: number;
 }
 
 export interface IOneFilmFromApi {
-  image:{original:string};
-  language:string;
+  image: { original: string };
+  language: string;
   name: string;
-  summary:string;
-
+  summary: string;
 }
 
 export interface IOneFilm {
-  image:string;
-  language:string;
+  image: string;
+  language: string;
   name: string;
-  summary:string;
+  summary: string;
 }
