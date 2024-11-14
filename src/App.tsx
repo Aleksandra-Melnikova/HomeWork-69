@@ -16,10 +16,8 @@ function App() {
         />
         <Route path="*" element={<h1>Not found</h1>} />
       </Routes></Layout>
-
-
     </div>
   );
-};
+}
 
 export default App;

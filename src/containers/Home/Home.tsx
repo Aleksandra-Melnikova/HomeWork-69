@@ -1,5 +1,5 @@
 
-import AutoCompleteFilms from '../../components/AutoCompliteFilms.tsx';
+import AutoCompleteFilms from '../../components/AutoComplite/AutoCompliteFilms.tsx';
 
 const Home = () => {
   return (

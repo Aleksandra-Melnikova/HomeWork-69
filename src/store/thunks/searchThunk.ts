@@ -9,7 +9,6 @@ export const onSearch = createAsyncThunk<
 >("serialsName/onSubmit", async (_arg) => {
   if (_arg) {
     const res = await axios(`http://api.tvmaze.com/search/shows?q=${_arg}`);
-console.log(res.data);
   return res.data;
   }
 });

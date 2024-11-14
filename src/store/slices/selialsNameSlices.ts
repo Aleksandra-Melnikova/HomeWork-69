@@ -26,6 +26,8 @@ const initialState: SerialsNameState  = {
 
 export const selectName = (state: RootState) => state.serialsName.films;
 export const selectInfo = (state: RootState) => state.serialsName.filmInfo;
+export const loadingSearch = (state: RootState) => state.serialsName.  isLoadingSearch;
+export const loadingGeiInfo = (state: RootState) => state.serialsName.isLoadingGetInfo;
 
 export const serialsNameSlice = createSlice({
   name: "serialsName",
@@ -60,8 +62,8 @@ export const serialsNameSlice = createSlice({
     })
       .addCase(getInfoOneFilm.fulfilled, (state, action ) => {
         state.isLoadingGetInfo = false;
-        console.log(action.payload);
         if(action.payload) {
+          state.films=[];
           const responseNew = action.payload;
           state.filmInfo = {
   name: responseNew.name ,
